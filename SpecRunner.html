@@ -1,9 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-  "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html5>
 <html>
 <head>
 <title>Jasmine Test Runner</title>
 <link rel="stylesheet" type="text/css" href="lib/jasmine-1.0.2/jasmine.css">
+<script type="text/javascript" src="lib/jquery.min.js"></script>
 <script type="text/javascript" src="lib/jasmine-1.0.2/jasmine.js"></script>
 <script type="text/javascript" src="lib/jasmine-1.0.2/jasmine-html.js"></script>
 
@@ -12,7 +12,6 @@
 
 <!-- include spec files here... -->
 <script type="text/javascript" src="spec/VendingMachineSpec.js"></script>
-
 </head>
 <body>
 
@@ -20,6 +19,22 @@
   jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
   jasmine.getEnv().execute();
 </script>
+
+<div id="vending-machine" style="background-color: blue; width: 500px; text-align: center;">
+  <br>
+  <h1 style="color: white; text-align: center;">VENDOMATIC</h1>
+  <div>
+    <button class="js-insert-nickel-btn">Insert nickel</button>
+    <button class="js-insert-dime-btn">Insert dime</button>
+    <button class="js-insert-quarter-btn">Insert quarter</button>
+  </div>
+  <br>
+  <div class="js-output"
+    style="background-color: black; color: white; width: 120px; margin: auto;">
+    NO DISPLAY
+  </div>
+  <br>
+</div>
 
 </body>
 </html>

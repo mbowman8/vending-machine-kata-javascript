@@ -1,20 +1,38 @@
-describe("Jasmine Test Runner", function() {
+var machine;
 
-  it("Runs", function() {
-    expect(true).toBeTruthy();
-    expect(false).toBeFalsy();
-    expect(42).toEqual(42);
-  });
+describe("Jasmine Test Runner", function() {
 
   describe("Vending Machine", function() {
 
     beforeEach(function() {
-      // any startup code goes here
+      machine = new Machine();
     });
 
-    it("..first test goes here..", function() {
+    it("shows a status of INSERT COIN", function() {
+        expect(machine.display()).toBe("INSERT COIN");
     });
-    
+
+    it("accepts nickels", function() {
+        machine.insertNickel();
+        expect(machine.display()).toBe("5");
+    });
+
+    it("accepts dimes", function() {
+        machine.insertDime();
+        expect(machine.display()).toBe("10");
+    });
+
+    it("accepts quarters", function() {
+        machine.insertQuarter();
+        expect(machine.display()).toBe("25");
+    });
+
+    it("accepts a quarter, a dime, and a nickel", function() {
+        machine.insertQuarter();
+        machine.insertDime();
+        machine.insertNickel();
+        expect(machine.display()).toBe("40");
+    });
   });
 
 });
