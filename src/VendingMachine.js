@@ -1,6 +1,20 @@
 var Machine = function() {
+    this.reset();
+};
+
+Machine.prototype.reset = function(value) {
+    that = this;
     $(function() {
-      $(".js-output").text("INSERT COIN");
+        $(".js-output").text("INSERT COIN");
+        $(".js-insert-nickel-btn").unbind().click(function(e) {
+            that.insertNickel();
+        });
+        $(".js-insert-dime-btn").unbind().click(function(e) {
+            that.insertDime();
+        });
+        $(".js-insert-quarter-btn").unbind().click(function(e) {
+            that.insertQuarter();
+        });
     });
     this._value = 0;
 };

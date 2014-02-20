@@ -8,6 +8,15 @@ describe("Jasmine Test Runner", function() {
       machine = new Machine();
     });
 
+    afterEach(function() {
+      machine.reset();
+    });
+
+    it("can be reset", function() {
+        machine.reset();
+        expect(machine.display()).toBe("INSERT COIN");
+    });
+
     it("shows a status of INSERT COIN", function() {
         expect(machine.display()).toBe("INSERT COIN");
     });
@@ -33,6 +42,7 @@ describe("Jasmine Test Runner", function() {
         machine.insertNickel();
         expect(machine.display()).toBe("40");
     });
+
   });
 
 });
