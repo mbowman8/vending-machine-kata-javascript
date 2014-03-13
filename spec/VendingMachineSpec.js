@@ -47,10 +47,17 @@ describe("Jasmine Test Runner", function () {
 			machine.insertPenny();
 			expect(machine.coinReturn()).toBe("PENNY");
 		});
-
-		it("gives cola", function () {
-			machine.buyCola();
-			expect(machine.itemContainer()).toBe("COLA");
+		
+        describe("when trying to buy cola without paying", function () {
+			it("fails to buy cola", function () {
+				machine.buyCola();
+				expect(machine.itemContainer()).toBe("EMPTY");
+			});
+			
+			it("tells you how much to pay", function () {
+				machine.buyCola();
+				expect(machine.display()).toBe("1.00");
+			});
 		});
 	});
 });

@@ -85,7 +85,8 @@ Machine.prototype.takePenny = function () {
 };
 
 Machine.prototype.buyCola = function () {
-	$(".js-itemContainer").text("COLA");
+	$(".js-itemContainer").text("EMPTY");
+	$(".js-output").text("1.00");
 };
 
 Machine.prototype.takeItem = function () {
